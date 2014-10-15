@@ -1,0 +1,24 @@
+#playlistcontrols {
+    width: 100%;
+}
+.roomFooter {
+    margin-top: 0px;
+}
+.layoutClickable {
+    margin: 0 2px 0 2px;
+    cursor: pointer;
+    color: #ccc;
+    text-decoration: underline;
+}
+.layoutNotClickable {
+    color: white;
+    text-decoration: none !important;
+    cursor: default;
+}
+#layoutSelector {
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    height: 20px;
+    margin-top: 7px;
+}

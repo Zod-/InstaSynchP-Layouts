@@ -1,0 +1,73 @@
+.stage, #media-title .title, .top-descr, #footer .footer, #top {
+      width: 1200px !important;
+}
+#media, #live_embed_player_flash, #media iframe, .video-js {
+      width: 750px!important;
+      height: 436px!important;
+}
+#chat-messages {
+      height: 406px !important;
+}
+#chat .right .users {
+      height: 434px !important;
+}
+#join {
+      top: 58px !important;
+}
+#chat {
+      height: 436px !important;
+}
+#playlist {
+      width: 749px !important;
+}
+.sliderContainer .slider {
+      width: 650px !important;
+}
+.poll-container {
+      margin: 5px 26px 0 0 !important;
+}
+.friendlist{
+    left: 1020px;
+}
+#chat #join-chat input {
+      margin: 118px 5px 0 100px !important;
+}
+#playlist .playlist .videos .video .video-info {
+      width: 655px;
+}
+#playlist_items {
+      width: 750px
+}
+.pl-info {
+      width: 680px !important;
+}
+.duration {
+      right: 0px !important;
+}
+#playlist_items li .pl-info .expand {
+      left: 692px !important;
+}
+#playlist_items li .pl-info .removeBtn {
+      left: 710px !important;
+}
+.logoutput {
+      margin-left: 1077px !important;
+}
+#playlist .playlist .pllist li .title {
+      width: 630px !important;
+}
+#playlist .playlist #playlist_items {
+      height: 368px;
+}
+#searchResults {
+      right: 35px !important;
+}
+#videos {
+      height: 368px !important;
+}
+.jspContainer {
+      height: 368px !important;
+}
+#playlist .playlist .drop-video {
+    width: calc(100% - 1.5%);
+}
