@@ -1,0 +1,268 @@
+#media {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10000000;
+}
+.video-js {
+    width: 100% !important;
+    height: 100% !important;
+}
+#chat {
+    position: fixed;
+    left: 0;
+    bottom: 344px;
+    z-index: 10000002;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.chat2 {
+    bottom: 122px !important
+}
+#ui-id-1 {
+    z-index: 10000002;
+}
+#vidTitle {
+    top: 25px;
+    position: fixed;
+    z-index: 10000003;
+    opacity: 0.3;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#vidTitle:hover {
+    opacity: 1 !important;
+}
+#chat:hover,
+#chat:hover #chat_users,
+#chat:hover #cin,
+#chat:hover #chat_controls,
+#chat #cin:focus {
+    opacity: 1 !important;
+}
+div#chat_users {
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#playlist_items {
+    width: 740px
+}
+.pl-info {
+    width: 680px;
+}
+.duration {
+    right: 0px;
+}
+#hide-playlist {
+    height: 30px;
+    bottom: 342px;
+    left: 0px;
+    opacity: 0.3;
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 30px;
+    z-index: 10000001;
+}
+.hide-playlist2 {
+    bottom: 116px !important;
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipW;
+}
+#hide-playlist > div {
+    height: 20px;
+    width: 60px;
+    background-image: url(http://i.imgur.com/MEKABf1.png);
+    position: relative;
+    left: 570px;
+    top: calc(50% - 10px);
+    cursor: pointer;
+}
+.sliderContainer .slider {
+    width: 620px !important;
+}
+#playlist_items li .pl-info .expand {
+    left: 682px;
+}
+#playlist_items li .pl-info .removeBtn {
+    left: 700px;
+}
+#playlist .playlist .pllist li .title {
+    width: 630px;
+}
+#videos {
+    height: 368px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.jspContainer {
+    height: 368px !important;
+}
+.playlist2 {
+    height: 0px !important;
+}
+#playlist {
+    position: fixed;
+    width: 749px;
+    left: 0;
+    bottom: 39px;
+    pointer-events: painted;
+    z-index: 10000001;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#playlist:hover,
+#hide-playlist:hover {
+    pointer-events: initial !important;
+    opacity: 1 !important;
+}
+.poll-container {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    width: 400px;
+    height: auto;
+    z-index: 10000010;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.poll-container2 {
+    right: -400px;
+}
+.poll-container:hover,
+.poll-container:hover #hide-poll {
+    opacity: 1 !important;
+}
+.poll-container .close-poll {
+    left: calc(100% - 15px);
+}
+#hide-poll {
+    width: 30px;
+    position: absolute;
+    height: 100%;
+    min-height: 60px;
+    right: 400px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.hide-poll2 {
+    opacity: 0.3 !important;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+#hide-poll > div {
+    height: 60px;
+    width: 20px;
+    background-image: url(http://i.imgur.com/sMQIL1E.png);
+    position: relative;
+    top: calc(50% - 30px);
+    left: calc(50% - 10px);
+    cursor: pointer;
+}
+.descr-stats {
+    position: fixed;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    top: 25px;
+    right: 0;
+    z-index: 10000003;
+    opacity: 0.3;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.descr-stats:hover {
+    opacity: 1 !important;
+}
+#search-results {
+    position: fixed !important;
+    z-index: 10000011 !important;
+    bottom: 43px !important;
+    left: 762px !important;
+    opacity: 0.3;
+}
+#search-results:hover {
+    opacity: 1 !important;
+}
+#divclosesearch {
+    z-index: 10000012 !important;
+}
+#block-fullscreen {
+    z-index: 10000001;
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+    height: 27px;
+    width: 30px;
+    cursor: pointer;
+}
+.block-fullscreen2 {
+    left: 0px !important;
+}
+body {
+    overflow: hidden;
+}
+.total-duration,
+.total-videos {
+    margin: 10px 8px 9px 3px !important;
+}
+#playlist .playlist .overall .total-videos {
+    margin-right: 18px !important;
+}
+#opacity-sliders {
+    display: inline-flex !important;
+    float: initial !important;
+    padding: 0px 0px 0px 15px;
+    margin: 15px 0px 0px 0px !important;
+    float: initial;
+}
+#playlist .playlist .videos .video .video-info {
+    width: 655px;
+}
+#GM_config {
+    z-index: 10000015 !important;
+}
+#loginfrm {
+    z-index: 10000016;
+    opacity: 0.3;
+    top: 25px;
+    padding-right: 0px !important;
+    right: 330px;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+#top{
+    width:initial !important;
+}
+#loginfrm:hover {
+    opacity: 1;
+}

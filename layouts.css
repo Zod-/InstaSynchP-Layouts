@@ -22,3 +22,49 @@
     height: 20px;
     margin-top: 7px;
 }
+
+/* fullscreen stuff */
+#opacity-sliders {
+    width: 80%;
+    height: 1px;
+    display: none !important;
+}
+#opacity-sliders > span {
+    position: relative;
+    top: -5px;
+    left: -6px;
+    font-size: 11px;
+    color: #BBBBBB;
+}
+#chat-slider,
+#poll-slider,
+#playlist-slider {
+    width: 29%;
+    height: inherit;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#chat-slider > span,
+#poll-slider > span,
+#playlist-slider > span {
+    position: relative;
+    top: -8px;
+    pointer-events: none;
+    font-size: 11px;
+    color: #BBBBBB;
+}
+#chat-slider > a,
+#poll-slider > a,
+#playlist-slider > a {
+    height: 0.5em;
+    width: 0.5em;
+}
+#chat-slider > span {
+    left: calc(50% - 12px);
+}
+#poll-slider > span {
+    left: calc(50% - 10px);
+}
+#playlist-slider > span {
+    left: calc(50% - 20px);
+}
