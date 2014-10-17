@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Provides a larger layout and fullscreen mode
 
-// @version     1.0.3
+// @version     1.0.4
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -97,7 +97,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/e2cb8b52f4dc76811c51c3121dbdd35d1de5b7d9/fullscreenLayout.css'
+            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/77eeab1d21ff09efdec77aa40d939ebadcdff9bb/fullscreenLayout.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
@@ -129,13 +129,13 @@ Layouts.prototype.setUpFullscreenOnce = function () {
             if (!gmc.get('make-chat-visible')) {
                 return;
             }
-            $('#chat').css('opacity', gmc.get('chat-message-opacity') / 100.0);
+            $('#chat .left').css('opacity', gmc.get('chat-message-opacity') / 100.0);
             if (chatVisibleTimer) {
                 clearTimeout(chatVisibleTimer);
                 chatVisibleTimer = undefined;
             }
             chatVisibleTimer = setTimeout(function () {
-                $('#chat').css('opacity', gmc.get('chat-opacity') / 100.0);
+                $('#chat .left').css('opacity', gmc.get('chat-opacity') / 100.0);
             }, 3000);
         }
         //on fullscreen change
@@ -147,9 +147,9 @@ Layouts.prototype.setUpFullscreenOnce = function () {
                 //the event somehow doesn't affect it when changing to fullscreen so fire it by hand again after a short time
                 setTimeout(function () {
                     events.fire('CSSLoad[layout]');
-                }, 750);
+                }, 1500);
                 //set bars and elements to their opacity values
-                $('#chat').css('opacity', gmc.get('chat-opacity') / 100.0);
+                $('#chat .left').css('opacity', gmc.get('chat-opacity') / 100.0);
                 $('#playlist').css('opacity', gmc.get('playlist-opacity') / 100.0);
                 $('.poll-container').css('opacity', gmc.get('poll-opacity') / 100.0);
                 $('#chat-slider').slider('option', 'value', gmc.get('chat-opacity'));
@@ -165,7 +165,7 @@ Layouts.prototype.setUpFullscreenOnce = function () {
                     clearTimeout(chatVisibleTimer);
                     chatVisibleTimer = undefined;
                 }
-                $('#chat').css('opacity', '1');
+                $('#chat .left').css('opacity', '1');
                 $('#playlist').css('opacity', '1');
                 $('.poll-container').css('opacity', '1');
             }
@@ -231,7 +231,7 @@ Layouts.prototype.setUpFullscreen = function () {
 
     //don't save opacity with every little value change
     function saveOpacity() {
-        $('#chat').css('opacity', gmc.get('chat-opacity') / 100.0);
+        $('#chat .left').css('opacity', gmc.get('chat-opacity') / 100.0);
         $('#playlist').css('opacity', gmc.get('playlist-opacity') / 100.0);
         $('.poll-container').css('opacity', gmc.get('poll-opacity') / 100.0);
         if (opacitySaveTimer) {
@@ -352,4 +352,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.3");
+window.plugins.layouts = new Layouts("1.0.4");
