@@ -1,0 +1,98 @@
+/* 
+	Taken from the v4c script made by biggles under GPL-3.0
+*/
+
+.stage, #media-title .title, .top-descr, #footer .footer, #top, .roomFooter {
+	width: 1800px!important;
+}
+#media, #live_embed_player_flash, #media iframe, .video-js {
+	width: 1360px!important;
+	height: 796px!important;
+}
+#playlist {
+	width:1360px!important;
+}
+#scriptOptions {
+	right: 38px!important;
+}
+.st-room-links {
+	width:600px!important;
+}
+#loginfrm {
+	right: 39px!important;
+}
+#playlist .playlist-controls .controls .add-vid input {
+    width: 960px!important;
+}
+#playlist .playlist .videos .video {
+    width: 1338px!important;
+}
+#playlist .playlist .videos .video .video-info {
+    width: 1253px!important;
+}
+#chat .left .messages {
+    height: 767px!important;
+}
+#playlist .playlist .videos .video .video-info .title {
+    max-width: 1050px!important;
+}
+#videos.videos {
+    height: 523px!important;
+}
+#chat, .left, .right {
+	height: 796px!important;
+}
+#loggedInAs {
+    margin-right: 150px!important;
+}
+.sliderContainer {
+	width: 100%!important;
+}
+.sliderContainer .slider {
+	width: 620px!important;
+}
+.poll-container {
+	margin: 5px 40px 0 0!important;
+}
+.playlist-controls {
+    width: 1350px!important;
+}
+#chat #join-chat input {
+    margin: 118px 5px 0 100px!important;
+}
+#playlist_items {
+	width: 750px!important;
+}
+.pl-info {
+	width: 680px!important;
+}
+.duration {
+	right: 0px!important;
+}
+#playlist_items li .pl-info .expand {
+	left: 697px!important;
+}
+#playlist_items li .pl-info .removeBtn {
+	left: 715px!important;
+}
+.logoutput {
+	margin-left: 1680px!important;
+}
+#playlist .playlist #playlist_total {
+	width: 744px!important;
+}
+#radiomenu {
+	margin-left: 1547px!important;
+}
+#playlist .playlist .pllist li .title {
+    width: 630px!important;
+}
+.playlist {
+    height: 550px!important;
+}
+#playlist .playlist #playlist_items {
+    height: 368px;
+}
+#facecodesmenu {
+    height: 795px!important;
+}
