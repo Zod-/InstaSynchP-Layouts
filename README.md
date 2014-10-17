@@ -3,6 +3,19 @@ InstaSynchP-Layouts
 
 Provides a larger layout and fullscreen mode
 
+To changes layouts use the settings menu or click on normal/large/huge above the description.<br>
+Fullscreen mode can be enabled through the cog in the control bar
+
+Settings:
+
+*   Dropdown menu for layouts.
+
+*   Opacity settings for playlist, chat, and poll
+
+*   On/Off make chat visible on a new message in chat
+
+*   Opacity of chat on a new message
+
 License
 -----------
 <InstaSynch - Watch Videos with friends.>
