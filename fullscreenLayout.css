@@ -15,13 +15,71 @@
     left: 0;
     bottom: 344px;
     z-index: 10000002;
+    background-color: initial !important;
+}
+.chat2 {
+    bottom: 122px !important
+}
+#cin {
+    background-color: initial;
+}
+#chat-messages {
+    overflow-y: auto;
+    visibility: hidden;
+}
+#chat .right .users {
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+}
+#chat .right .users:hover {
+    opacity: 1 !important;
+}
+#chat .left,
+#loginfrm {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+.descr-stats,
+#hide-poll,
+.poll-container,
+#playlist,
+#videos,
+#hide-playlist,
+div#chat_users,
+#vidTitle,
+#chat {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.chat2 {
-    bottom: 122px !important
+#chat .left:hover {
+    opacity: 1 !important;
+}
+#chat .right .users li {
+    visibility: visible;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+}
+#cin,
+#chat .right .users .m,
+#chat .left .messages .message,
+#vidTitle,
+.descr-stats {
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+#cin {
+    color: #FF0;
+    background-color: initial !important;
+}
+#chat .left .messages .message {
+    visibility: visible;
+    color: #FF0;
+}
+#chat .left .messages .message .username {
+    color: #FF0 !important;
 }
 #ui-id-1 {
     z-index: 10000002;
@@ -31,28 +89,12 @@
     position: fixed;
     z-index: 10000003;
     opacity: 0.3;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 #vidTitle:hover {
     opacity: 1 !important;
 }
-#chat:hover,
-#chat:hover #chat_users,
-#chat:hover #cin,
-#chat:hover #chat_controls,
-#chat #cin:focus {
-    opacity: 1 !important;
-}
 div#chat_users {
     opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 #playlist_items {
     width: 740px
@@ -69,10 +111,6 @@ div#chat_users {
     left: 0px;
     opacity: 0.3;
     position: absolute;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     width: 30px;
     z-index: 10000001;
 }
@@ -107,10 +145,6 @@ div#chat_users {
 }
 #videos {
     height: 368px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .jspContainer {
     height: 368px !important;
@@ -125,10 +159,6 @@ div#chat_users {
     bottom: 39px;
     pointer-events: painted;
     z-index: 10000001;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 #playlist:hover,
 #hide-playlist:hover {
@@ -142,10 +172,6 @@ div#chat_users {
     width: 400px;
     height: auto;
     z-index: 10000010;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .poll-container2 {
     right: -400px;
@@ -164,10 +190,6 @@ div#chat_users {
     min-height: 60px;
     right: 400px;
     opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .hide-poll2 {
     opacity: 0.3 !important;
@@ -188,15 +210,10 @@ div#chat_users {
 }
 .descr-stats {
     position: fixed;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     top: 25px;
     right: 0;
     z-index: 10000003;
     opacity: 0.3;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .descr-stats:hover {
     opacity: 1 !important;
@@ -255,13 +272,9 @@ body {
     top: 25px;
     padding-right: 0px !important;
     right: 330px;
-    -webkit-transition: opacity 0.5s ease;
-    -moz-transition: opacity 0.5s ease;
-    -o-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
 }
-#top{
-    width:initial !important;
+#top {
+    width: initial !important;
 }
 #loginfrm:hover {
     opacity: 1;
