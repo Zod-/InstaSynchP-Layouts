@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Provides a larger layout and fullscreen mode
 
-// @version     1.0.2
+// @version     1.0.3
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -16,9 +16,7 @@
 // @run-at      document-start
 
 // @require     https://greasyfork.org/scripts/5647-instasynchp-library/code/InstaSynchP%20Library.js
-// @require     https://greasyfork.org/scripts/5829-jquery-plugin-require-prefix/code/jquery-plugin-require-prefix.js
-// @require     https://greasyfork.org/scripts/2858-jquery-fullscreen/code/jqueryfullscreen.js
-// @require     https://greasyfork.org/scripts/5830-jquery-plugin-require-suffix/code/jquery-plugin-require-suffix.js
+// @require     https://greasyfork.org/scripts/5832-jquery-fullscreen-page-load/code/jqueryfullscreen%20page%20load.js
 // ==/UserScript==
 
 function Layouts(version) {
@@ -96,7 +94,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/7d144b7ae7a5e0ad168f182c88b9312c8fb2beda/largeLayout.css'
         }, {
             'name': 'hugeLayout',
-            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/raw/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
+            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/e2cb8b52f4dc76811c51c3121dbdd35d1de5b7d9/fullscreenLayout.css'
@@ -354,4 +352,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.2");
+window.plugins.layouts = new Layouts("1.0.3");
