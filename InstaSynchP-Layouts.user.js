@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.0.8
+// @version     1.0.9
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -23,21 +23,21 @@ function Layouts(version) {
     this.version = version;
     this.userFullscreenToggle = false;
     this.settings = [{
-        'id': 'Layout',
         'label': 'Layout',
+        'id': 'Layout',
         'type': 'select',
         'options': ['normal', 'large', 'huge'],
         'default': 'normal',
         'section': ['General']
     }, {
-        'id': 'make-chat-visible',
         'label': 'Make chat visible on message',
+        'id': 'make-chat-visible',
         'type': 'checkbox',
         'default': true,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'chat-message-opacity',
         'label': 'On Chat Message Opacity',
+        'id': 'chat-message-opacity',
         'type': 'int',
         'title': '0-100',
         'min': 0,
@@ -46,8 +46,8 @@ function Layouts(version) {
         'size': 1,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'chat-opacity',
         'label': 'Chat Opacity',
+        'id': 'chat-opacity',
         'type': 'int',
         'title': '0-100',
         'min': 0,
@@ -56,8 +56,8 @@ function Layouts(version) {
         'size': 1,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'playlist-opacity',
         'label': 'Playlist Opacity',
+        'id': 'playlist-opacity',
         'type': 'int',
         'title': '0-100',
         'min': 0,
@@ -66,8 +66,8 @@ function Layouts(version) {
         'size': 1,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'poll-opacity',
         'label': 'Poll Opacity',
+        'id': 'poll-opacity',
         'type': 'int',
         'title': '0-100',
         'min': 0,
@@ -76,16 +76,18 @@ function Layouts(version) {
         'size': 1,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'fullscreen-font-color',
         'label': 'Font color',
+        'id': 'fullscreen-font-color',
         'type': 'text',
         'default': '#FFFF00',
+        'size': 4,
         'section': ['General', 'Fullscreen']
     }, {
-        'id': 'fullscreen-outline-color',
         'label': 'Outline color',
+        'id': 'fullscreen-outline-color',
         'type': 'text',
         'default': '#000000',
+        'size': 4,
         'section': ['General', 'Fullscreen']
     }];
 }
@@ -390,4 +392,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.8");
+window.plugins.layouts = new Layouts("1.0.9");

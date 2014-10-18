@@ -6,8 +6,8 @@ Provides a larger layout and fullscreen mode
 To changes layouts use the settings menu or click on normal/large/huge above the description.<br>
 Fullscreen mode can be enabled through the cog in the control bar
 
-Settings:
-
+Settings
+---------
 *   Dropdown menu for layouts.
 
 *   Opacity settings for playlist, chat, and poll
