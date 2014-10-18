@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.0.7
+// @version     1.0.8
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -108,7 +108,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'http://puu.sh/chaqE/764051c9a8.css'
+            'url': 'https://raw.githubusercontent.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
@@ -117,7 +117,7 @@ Layouts.prototype.addLayoutsOnce = function () {
     //style for the footer controls
     cssLoader.add({
         'name': 'layouts',
-        'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css',
+        'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/e2cb8b52f4dc76811c51c3121dbdd35d1de5b7d9/layouts.css',
         'autoload': true
     });
     events.on('SettingChange[Layout]', th.changeLayout);
@@ -390,4 +390,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.7");
+window.plugins.layouts = new Layouts("1.0.8");
