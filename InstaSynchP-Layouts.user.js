@@ -108,7 +108,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'https://raw.githubusercontent.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css'
+            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
