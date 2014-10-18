@@ -63,9 +63,7 @@ div#chat_users,
     visibility: visible;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
 }
-#cin,
 #chat .right .users .m,
-#chat .left .messages .message,
 #vidTitle,
 .descr-stats {
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
