@@ -71,15 +71,10 @@ div#chat_users,
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 #cin {
-    color: #FF0;
     background-color: initial !important;
 }
 #chat .left .messages .message {
     visibility: visible;
-    color: #FF0;
-}
-#chat .left .messages .message .username {
-    color: #FF0 !important;
 }
 #ui-id-1 {
     z-index: 10000002;
@@ -268,7 +263,7 @@ body {
 }
 #loginfrm {
     z-index: 10000016;
-    opacity: 0.3;
+    opacity: 0.05;
     top: 25px;
     padding-right: 0px !important;
     right: 330px;
