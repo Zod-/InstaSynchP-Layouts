@@ -16,7 +16,9 @@ Settings:
 
 *   Opacity of chat on a new message
 
-*   # hex color of the font in fullscreen 
+*   # hex color of the font in fullscreen
+
+*   # hex color of the outline in fullscreen
 
 License
 -----------

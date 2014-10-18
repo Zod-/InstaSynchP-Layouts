@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        InstaSynchP Layouts
 // @namespace   InstaSynchP
-// @description Provides a larger layout and fullscreen mode
+// @description Larger layouts and fullscreen mode
 
-// @version     1.0.6
+// @version     1.0.7
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -77,9 +77,15 @@ function Layouts(version) {
         'section': ['General', 'Fullscreen']
     }, {
         'id': 'fullscreen-font-color',
-        'label': 'Fullscreen font color',
+        'label': 'Font color',
         'type': 'text',
         'default': '#FFFF00',
+        'section': ['General', 'Fullscreen']
+    }, {
+        'id': 'fullscreen-outline-color',
+        'label': 'Outline color',
+        'type': 'text',
+        'default': '#000000',
         'section': ['General', 'Fullscreen']
     }];
 }
@@ -102,7 +108,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b7ab6808cd63b71249ecf91993b87bd68c119f76/fullscreenLayout.css'
+            'url': 'http://puu.sh/chaqE/764051c9a8.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
@@ -111,7 +117,7 @@ Layouts.prototype.addLayoutsOnce = function () {
     //style for the footer controls
     cssLoader.add({
         'name': 'layouts',
-        'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/e2cb8b52f4dc76811c51c3121dbdd35d1de5b7d9/layouts.css',
+        'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css',
         'autoload': true
     });
     events.on('SettingChange[Layout]', th.changeLayout);
@@ -131,21 +137,24 @@ Layouts.prototype.setUpFullscreenOnce = function () {
     });
     $('head').append(
         $('<style>', {
-            'id': 'fullscreen-font-color'
+            'id': 'fullscreen-font'
         })
     );
     //make chat visible for 5 seconds on every message
     function changeFontColor(oldVal, newVal) {
         if (newVal === 'initial') {
-            $('#fullscreen-font-color').text('');
+            $('#fullscreen-font').text('');
             return;
         }
-        $('#fullscreen-font-color').text(
-            ('#cin,'+
-            '#chat .left .messages .message,'+
-            '#chat .left .messages .message .username{'+
-            'color: {0} !important;'+
-            '}').format(newVal));
+        $('#fullscreen-font').text(
+            ('#cin,' +
+                '#chat .left .messages .message,' +
+                '#chat .left .messages .message .username{' +
+                '   color: {0} !important;' +
+                '   text-shadow: -1px 0 {1}, 0 1px {1}, 1px 0 {1}, 0 -1px {1};' +
+                '}'
+            ).format(gmc.get('fullscreen-font-color'), gmc.get('fullscreen-outline-color'))
+        );
     }
 
     function chatVisibility() {
@@ -166,8 +175,9 @@ Layouts.prototype.setUpFullscreenOnce = function () {
         if ($.fullscreen.isFullScreen()) {
             if (th.userFullscreenToggle) {
                 events.on('AddMessage', chatVisibility);
-                changeFontColor(undefined, gmc.get('fullscreen-font-color'));
+                changeFontColor();
                 events.on('SettingChange[fullscreen-font-color]', changeFontColor);
+                events.on('SettingChange[fullscreen-outline-color]', changeFontColor);
                 cssLoader.load('fullscreenLayout');
                 //the event somehow doesn't affect it when changing to fullscreen so fire it by hand again after a short time
                 setTimeout(function () {
@@ -187,6 +197,7 @@ Layouts.prototype.setUpFullscreenOnce = function () {
                 events.unbind('AddMessage', chatVisibility);
                 changeFontColor(undefined, 'initial');
                 events.unbind('SettingChange[fullscreen-font-color]', changeFontColor);
+                events.unbind('SettingChange[fullscreen-outline-color]', changeFontColor);
                 cssLoader.load('{0}Layout'.format(gmc.get('Layout')));
                 if (chatVisibleTimer) {
                     clearTimeout(chatVisibleTimer);
@@ -379,4 +390,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.6");
+window.plugins.layouts = new Layouts("1.0.7");
