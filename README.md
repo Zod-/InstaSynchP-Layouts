@@ -16,6 +16,8 @@ Settings:
 
 *   Opacity of chat on a new message
 
+*   # hex color of the font in fullscreen 
+
 License
 -----------
 <InstaSynch - Watch Videos with friends.>

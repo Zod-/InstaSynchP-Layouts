@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Provides a larger layout and fullscreen mode
 
-// @version     1.0.4
+// @version     1.0.5
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -76,6 +76,12 @@ function Layouts(version) {
         'default': 30,
         'size': 1,
         'section': ['General', 'Fullscreen']
+    }, {
+        'id': 'fullscreen-font-color',
+        'label': 'Fullscreen font color',
+        'type': 'text',
+        'default': '#FFFF00',
+        'section': ['General', 'Fullscreen']
     }];
 }
 
@@ -97,7 +103,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/77eeab1d21ff09efdec77aa40d939ebadcdff9bb/fullscreenLayout.css'
+            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b7ab6808cd63b71249ecf91993b87bd68c119f76/fullscreenLayout.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
@@ -124,7 +130,25 @@ Layouts.prototype.setUpFullscreenOnce = function () {
         $('.poll-container').removeClass('poll-container2');
         $('#hide-poll').removeClass('hide-poll2');
     });
+    $('head').append(
+        $('<style>', {
+            'id': 'fullscreen-font-color'
+        })
+    );
     //make chat visible for 5 seconds on every message
+    function changeFontColor(oldVal, newVal) {
+        if (newVal === 'initial') {
+            $('#fullscreen-font-color').text('');
+            return;
+        }
+        $('#fullscreen-font-color').text(
+            ('#cin,'+
+            '#chat .left .messages .message,'+
+            '#chat .left .messages .message .username{'+
+            'color: {0} !important;'+
+            '}').format(newVal));
+    }
+
     function chatVisibility() {
             if (!gmc.get('make-chat-visible')) {
                 return;
@@ -143,6 +167,8 @@ Layouts.prototype.setUpFullscreenOnce = function () {
         if ($.fullscreen.isFullScreen()) {
             if (th.userFullscreenToggle) {
                 events.on('AddMessage', chatVisibility);
+                changeFontColor(undefined, gmc.get('fullscreen-font-color'));
+                events.on('SettingChange[fullscreen-font-color]', changeFontColor);
                 cssLoader.load('fullscreenLayout');
                 //the event somehow doesn't affect it when changing to fullscreen so fire it by hand again after a short time
                 setTimeout(function () {
@@ -160,6 +186,8 @@ Layouts.prototype.setUpFullscreenOnce = function () {
             //turn back to normal if user canceled fullscreen
             if (th.userFullscreenToggle) {
                 events.unbind('AddMessage', chatVisibility);
+                changeFontColor(undefined, 'initial');
+                events.unbind('SettingChange[fullscreen-font-color]', changeFontColor);
                 cssLoader.load('{0}Layout'.format(gmc.get('Layout')));
                 if (chatVisibleTimer) {
                     clearTimeout(chatVisibleTimer);
@@ -352,4 +380,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.4");
+window.plugins.layouts = new Layouts("1.0.5");
