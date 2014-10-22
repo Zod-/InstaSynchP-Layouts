@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.0.9
+// @version     1.1
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -92,12 +92,9 @@ function Layouts(version) {
     }];
 }
 
-function layoutsRef() {
-    return window.plugins.layouts;
-}
 Layouts.prototype.addLayoutsOnce = function () {
     "use strict";
-    var th = layoutsRef(),
+    var th = this,
         i,
         layouts = [{
             'name': 'normalLayout',
@@ -122,18 +119,18 @@ Layouts.prototype.addLayoutsOnce = function () {
         'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/e2cb8b52f4dc76811c51c3121dbdd35d1de5b7d9/layouts.css',
         'autoload': true
     });
-    events.on('SettingChange[Layout]', th.changeLayout);
+    events.on(th, 'SettingChange[Layout]', th.changeLayout);
     //reinitialise once the css has been loaded to fix the size
-    events.on('CSSLoad[layout]', function () {
+    events.on(th, 'CSSLoad[layout]', function () {
         $("#videos").data("jsp").reinitialise();
     });
 };
 Layouts.prototype.setUpFullscreenOnce = function () {
     "use strict";
-    var th = layoutsRef(),
+    var th = this,
         chatVisibleTimer;
     //make poll visible in fullscreen when it is hidden
-    events.on('CreatePoll', function () {
+    events.on(th, 'CreatePoll', function () {
         $('.poll-container').removeClass('poll-container2');
         $('#hide-poll').removeClass('hide-poll2');
     });
@@ -143,7 +140,7 @@ Layouts.prototype.setUpFullscreenOnce = function () {
         })
     );
     //make chat visible for 5 seconds on every message
-    function changeFontColor(oldVal, newVal) {
+    function changeFontColor(ignore, newVal) {
         if (newVal === 'initial') {
             $('#fullscreen-font').text('');
             return;
@@ -176,10 +173,9 @@ Layouts.prototype.setUpFullscreenOnce = function () {
     $(document).bind('fscreenchange', function () {
         if ($.fullscreen.isFullScreen()) {
             if (th.userFullscreenToggle) {
-                events.on('AddMessage', chatVisibility);
+                events.on(th, 'AddMessage', chatVisibility);
                 changeFontColor();
-                events.on('SettingChange[fullscreen-font-color]', changeFontColor);
-                events.on('SettingChange[fullscreen-outline-color]', changeFontColor);
+                events.on(th, 'SettingChange[fullscreen-font-color],SettingChange[fullscreen-outline-color]', changeFontColor);
                 cssLoader.load('fullscreenLayout');
                 //the event somehow doesn't affect it when changing to fullscreen so fire it by hand again after a short time
                 setTimeout(function () {
@@ -198,8 +194,7 @@ Layouts.prototype.setUpFullscreenOnce = function () {
             if (th.userFullscreenToggle) {
                 events.unbind('AddMessage', chatVisibility);
                 changeFontColor(undefined, 'initial');
-                events.unbind('SettingChange[fullscreen-font-color]', changeFontColor);
-                events.unbind('SettingChange[fullscreen-outline-color]', changeFontColor);
+                events.unbind('SettingChange[fullscreen-font-color],SettingChange[fullscreen-outline-color]', changeFontColor);
                 cssLoader.load('{0}Layout'.format(gmc.get('Layout')));
                 if (chatVisibleTimer) {
                     clearTimeout(chatVisibleTimer);
@@ -216,7 +211,7 @@ Layouts.prototype.setUpFullscreenOnce = function () {
 
 Layouts.prototype.addLayouts = function () {
     "use strict";
-    var th = layoutsRef(),
+    var th = this,
         i,
         layouts = [
             'normal',
@@ -227,7 +222,7 @@ Layouts.prototype.addLayouts = function () {
     function setLayout(event) {
         if (gmc.get('Layout') !== $(event.currentTarget).text()) {
             gmc.set('Layout', $(event.currentTarget).text());
-            plugins.settings.save();
+            window.plugins.settings.save();
         }
     }
 
@@ -247,16 +242,19 @@ Layouts.prototype.addLayouts = function () {
     //change to that layout
     th.changeLayout();
 };
+
 Layouts.prototype.setUpFullscreen = function () {
     "use strict";
-    var th = layoutsRef(),
+    var th = this,
         opacitySaveTimer;
     //add option in the settings menu
     $('#playlist-settings-menu').append(
         $('<li>', {
             'id': 'fullscreen',
             'title': 'turn fullscreen on or off'
-        }).click(th.toggleFullscreen).text('Fullscreen')
+        }).click(function () {
+            th.toggleFullscreen();
+        }).text('Fullscreen')
     );
 
     //add div to block the fullscreen button of the player
@@ -278,7 +276,7 @@ Layouts.prototype.setUpFullscreen = function () {
             clearTimeout(opacitySaveTimer);
             opacitySaveTimer = undefined;
         }
-        opacitySaveTimer = setTimeout(plugins.settings.save, 5000);
+        opacitySaveTimer = setTimeout(window.plugins.settings.save, 5000);
     }
 
     //add buttons to hide playlist/poll
@@ -318,7 +316,7 @@ Layouts.prototype.setUpFullscreen = function () {
                 value: gmc.get('chat-opacity'),
                 min: 0,
                 max: 100,
-                slide: function (event, ui) {
+                slide: function (ignore, ui) {
                     gmc.set('chat-opacity', ui.value);
                     saveOpacity();
                 }
@@ -333,7 +331,7 @@ Layouts.prototype.setUpFullscreen = function () {
                 value: gmc.get('poll-opacity'),
                 min: 0,
                 max: 100,
-                slide: function (event, ui) {
+                slide: function (ignore, ui) {
                     gmc.set('poll-opacity', ui.value);
                     saveOpacity();
                 }
@@ -348,7 +346,7 @@ Layouts.prototype.setUpFullscreen = function () {
                 value: gmc.get('playlist-opacity'),
                 min: 0,
                 max: 100,
-                slide: function (event, ui) {
+                slide: function (ignore, ui) {
                     gmc.set('playlist-opacity', ui.value);
                     saveOpacity();
                 }
@@ -361,21 +359,21 @@ Layouts.prototype.setUpFullscreen = function () {
 
 Layouts.prototype.preConnect = function () {
     "use strict";
-    var th = layoutsRef();
+    var th = this;
     th.addLayouts();
     th.setUpFullscreen();
 };
 
 Layouts.prototype.executeOnce = function () {
     "use strict";
-    var th = layoutsRef();
+    var th = this;
     th.addLayoutsOnce();
     th.setUpFullscreenOnce();
 };
 
 Layouts.prototype.toggleFullscreen = function () {
     "use strict";
-    var th = layoutsRef();
+    var th = this;
     if ($.fullscreen.isFullScreen()) {
         $.fullscreen.exit();
     } else {
@@ -392,4 +390,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.0.9");
+window.plugins.layouts = new Layouts("1.1");
