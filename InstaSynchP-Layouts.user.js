@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.1.1
+// @version     1.1.2
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     GPL-3.0
@@ -21,6 +21,7 @@
 function Layouts(version) {
     "use strict";
     this.version = version;
+    this.name = 'InstaSynchP Layouts';
     this.userFullscreenToggle = false;
     this.settings = [{
         'label': 'Layout',
@@ -390,4 +391,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts("1.1.1");
+window.plugins.layouts = new Layouts('1.1.2');
