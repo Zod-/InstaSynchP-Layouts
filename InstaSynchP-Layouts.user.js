@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.1.2
+// @version     1.1.3
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     MIT
@@ -108,7 +108,7 @@ Layouts.prototype.addLayoutsOnce = function () {
             'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/b1e8f187eecce9ea4d552b97f76e8161ecfb3544/hugeLayout.css'
         }, {
             'name': 'fullscreenLayout',
-            'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-Layouts/a8a55d6b839ab0b16eb38008b21b01c53d71cede/fullscreenLayout.css'
+            'url': 'https://rawgit.com/Zod-/InstaSynchP-Layouts/af645cbcd04ea0f813e335540995672317809195/fullscreenLayout.css'
         }];
     for (i = 0; i < layouts.length; i += 1) {
         layouts[i].id = 'layout';
@@ -391,4 +391,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts('1.1.2');
+window.plugins.layouts = new Layouts('1.1.3');
