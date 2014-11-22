@@ -256,7 +256,8 @@ body {
 #playlist .playlist .videos .video .video-info {
     width: 655px;
 }
-#GM_config {
+#GM_config,
+#PGM_config {
     z-index: 10000015 !important;
 }
 #loginfrm {
