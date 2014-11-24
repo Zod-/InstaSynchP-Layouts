@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.1.3
+// @version     1.1.4
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     MIT
@@ -16,6 +16,7 @@
 // @run-at      document-start
 
 // @require     https://greasyfork.org/scripts/5647-instasynchp-library/code/InstaSynchP%20Library.js
+// @require     https://greasyfork.org/scripts/2858-jquery-fullscreen/code/jqueryfullscreen.js?version=25886
 // ==/UserScript==
 
 function Layouts(version) {
@@ -391,4 +392,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts('1.1.3');
+window.plugins.layouts = new Layouts('1.1.4');
