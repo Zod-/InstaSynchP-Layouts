@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.1.4
+// @version     1.1.5
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     MIT
@@ -16,7 +16,7 @@
 // @run-at      document-start
 
 // @require     https://greasyfork.org/scripts/5647-instasynchp-library/code/InstaSynchP%20Library.js
-// @require     https://greasyfork.org/scripts/2858-jquery-fullscreen/code/jqueryfullscreen.js?version=25886
+// @require     https://greasyfork.org/scripts/2858-jquery-fullscreen/code/jqueryfullscreen.js?version=26079
 // ==/UserScript==
 
 function Layouts(version) {
@@ -179,10 +179,6 @@ Layouts.prototype.setUpFullscreenOnce = function () {
                 changeFontColor();
                 events.on(th, 'SettingChange[fullscreen-font-color],SettingChange[fullscreen-outline-color]', changeFontColor);
                 cssLoader.load('fullscreenLayout');
-                //the event somehow doesn't affect it when changing to fullscreen so fire it by hand again after a short time
-                setTimeout(function () {
-                    events.fire('CSSLoad[layout]');
-                }, 1500);
                 //set bars and elements to their opacity values
                 $('#chat .left').css('opacity', gmc.get('chat-opacity') / 100.0);
                 $('#playlist').css('opacity', gmc.get('playlist-opacity') / 100.0);
@@ -392,4 +388,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts('1.1.4');
+window.plugins.layouts = new Layouts('1.1.5');
