@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Larger layouts and fullscreen mode
 
-// @version     1.1.5
+// @version     1.1.6
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-Layouts
 // @license     MIT
@@ -45,7 +45,7 @@ function Layouts(version) {
         'min': 0,
         'max': 100,
         'default': 100,
-        'size': 1,
+        'size': 3,
         'section': ['General', 'Fullscreen']
     }, {
         'label': 'Chat Opacity',
@@ -55,7 +55,7 @@ function Layouts(version) {
         'min': 0,
         'max': 100,
         'default': 30,
-        'size': 1,
+        'size': 3,
         'section': ['General', 'Fullscreen']
     }, {
         'label': 'Playlist Opacity',
@@ -65,7 +65,7 @@ function Layouts(version) {
         'min': 0,
         'max': 100,
         'default': 30,
-        'size': 1,
+        'size': 3,
         'section': ['General', 'Fullscreen']
     }, {
         'label': 'Poll Opacity',
@@ -75,21 +75,21 @@ function Layouts(version) {
         'min': 0,
         'max': 100,
         'default': 30,
-        'size': 1,
+        'size': 3,
         'section': ['General', 'Fullscreen']
     }, {
         'label': 'Font color',
         'id': 'fullscreen-font-color',
         'type': 'text',
         'default': '#FFFF00',
-        'size': 5,
+        'size': 7,
         'section': ['General', 'Fullscreen']
     }, {
         'label': 'Outline color',
         'id': 'fullscreen-outline-color',
         'type': 'text',
         'default': '#000000',
-        'size': 5,
+        'size': 7,
         'section': ['General', 'Fullscreen']
     }];
 }
@@ -388,4 +388,4 @@ Layouts.prototype.changeLayout = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.layouts = new Layouts('1.1.5');
+window.plugins.layouts = new Layouts('1.1.6');
